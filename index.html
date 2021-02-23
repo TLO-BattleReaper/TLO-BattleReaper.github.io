@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robot</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Robot - Stanislao Bianco</h1>
+  <script>
+    function setup() {
+      //dimensioni X e Y dell'area di lavoro
+      createCanvas(1700, 2000);
+    }
+
+    function draw() {
+      //modello colori R G B
+      background(127, 255, 0);
+
+
+      fill(70, 130, 180); //colore faccia
+      square(mouseX, mouseY, 200); //faccia
+
+
+      line(mouseX+10, mouseY-50, mouseX+50, mouseY); //asta antenna sx
+
+
+      line(mouseX+190, mouseY-50, mouseX+150, mouseY); //asta antenna dx
+
+
+      fill(210, 105, 30); //colore cerchio antennna sx
+      circle(mouseX+190, mouseY-50, 15); //cerchio antenna sx
+
+
+      fill(210, 105, 30); //colore cerchio antenna dx
+      circle(mouseX+10, mouseY-50, 15); //cerchio antenna dx
+
+
+      fill(255, 77, 0); //colore occhio esterno sx
+      circle(mouseX+65, mouseY+45, 50); //occhio esterno sx
+
+      fill(34, 139, 34); //colore occhio interno 1 sx
+      circle(mouseX+65, mouseY+45, 30); //occhio interno 1 sx
+
+
+      fill(111, 0, 255); //colore occhio interno 2 sx
+      circle(mouseX+65, mouseY+50, 20); //occhio interno 2 sx
+
+
+      fill(255, 77, 0); //colore occhio esterno dx
+      circle(mouseX+135, mouseY+45, 50); //occhio esterno dx
+
+
+      fill(34, 139, 34); //colore occhio interno 1 dx
+      circle(mouseX+135, mouseY+45, 30); //occhio interno 1 dx
+
+
+      fill(111, 0, 255); //colore occhio interno 2 dx
+      circle(mouseX+135, mouseY+50, 20); //occhio interno 2 dx
+
+
+      fill(0, 123, 167); //colore naso
+      rect(mouseX+90, mouseY+50, 20, 70); //naso
+
+
+      fill(255, 36, 0); //colore bocca
+      rect(mouseX+50, mouseY+125, 100, 35); //bocca
+
+
+      fill(30, 144, 255); //colore corpo
+      rect(mouseX-100, mouseY+200, 400, 500); //corpo
+
+
+      fill(30, 144, 255); //colore sportello
+      rect(mouseX-75, mouseY+240, 350, 290); //sportello
+
+
+      fill(0, 47, 167); //colore vite sportello angolo alto sx
+      circle(mouseX-40, mouseY+280, 20); //vite sportello angolo alto sx
+      line(mouseX-49, mouseY+277, mouseX-31, mouseY+283); //stella 1 vite sportello angolo alto sx
+      line(mouseX-35, mouseY+272, mouseX-45, mouseY+288); //stella 2 vite sportello angolo alto sx
+
+
+      fill(0, 47, 167); //colore vite sportello angolo alto dx
+      circle(mouseX+240, mouseY+280, 20); //vite sportello angolo alto dx
+      line(mouseX+231, mouseY+277, mouseX+249, mouseY+283); //stella 1 vite sportello angolo alto dx
+      line(mouseX+245, mouseY+272, mouseX+235, mouseY+288); //stella 2 vite sportello angolo alto dx
+
+
+      fill(0, 47, 167); //colore vite sportello angolo basso sx
+      circle(mouseX-40, mouseY+485, 20); //vite sportello angolo basso sx
+      line(mouseX-49, mouseY+482, mouseX-31, mouseY+488); //stella 1 vite sportello angolo basso sx
+      line(mouseX-35, mouseY+477, mouseX-45, mouseY+493); //stella 2 vite sportello angolo basso sx
+
+
+      fill(0, 47, 167); //colore vite sportello angolo basso dx
+      circle(mouseX+240, mouseY+485, 20); //vite sportello angolo basso dx
+      line(mouseX+231, mouseY+482, mouseX+249, mouseY+488); //stella 1 vite sportello angolo basso dx
+      line(mouseX+245, mouseY+477, mouseX+235, mouseY+493); //stella 2 vite sportello angolo basso dx
+
+
+      fill(255, 255, 0); //colore cerchio corpo sx
+      circle(mouseX-50, mouseY+615, 60); //cerchio corpo sx
+
+
+      fill(255, 255, 0); //colore cerchio corpo dx
+      circle(mouseX+249, mouseY+615, 60); //cerchio corpo dx
+
+
+      fill(255, 255, 0); //colore rettangolo piccolo superiore corpo
+      rect(mouseX, mouseY+587, 200, 20); //rettangolo piccolo superiore corpo
+
+
+      fill(255, 255, 0); //colore rettangolo piccolo inferiore corpo
+      rect(mouseX, mouseY+623, 200, 20); //rettangolo piccolo inferiore corpo
+
+
+      fill(30, 144, 255); //colore braccio sx 1
+      rect(mouseX-350, mouseY+320, 250, 60); //braccio sx 1
+
+
+      fill(95, 95, 95); //colore braccio sx 2
+      rect(mouseX-350, mouseY+160, 60, 160); //braccio sx 2
+
+
+      fill(30, 144, 255); //colore braccio dx 1
+      rect(mouseX+300, mouseY+320, 250, 60); //braccio dx 1
+
+
+      fill(95, 95, 95); //colore braccio dx 2
+      rect(mouseX+490, mouseY+160, 60, 160); //braccio dx 2
+
+
+      fill(30, 144, 255); //colore gamba sx
+      rect(mouseX-50, mouseY+700, 100, 400); //gamba sx
+
+
+      fill(30, 144, 255); //colore gamba dx
+      rect(mouseX+150, mouseY+700, 100, 400); //gamba dx
+
+
+      fill(150, 75, 0); //colore pezzo rotella sx
+      rect(mouseX-10, mouseY+1100, 20, 60); //pezzo rotella sx
+
+
+      fill(5, 4, 2); //colore rotella sx
+      circle(mouseX, mouseY+1195, 70); //rotella sx
+
+
+      fill(150, 75, 0); //colore pezzo rotella dx
+      rect(mouseX+190, mouseY+1100, 20, 60); //pezzo rotella dx
+
+
+      fill(5, 4, 2); //colore rotella dx
+      circle(mouseX+200, mouseY+1195, 70); //rotella dx
+
+    }
+  </script>
+</body>
+
+</html>
