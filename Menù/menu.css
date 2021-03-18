@@ -1,0 +1,22 @@
+h1 {
+    font-family: sans-serif;
+    position:relative;
+    margin: top;
+    text-align: center;
+    color: black;
+}
+
+h3 {
+    font-family: Verdana;
+    position: relative;
+    border: solid green 5px;
+    text-align: center;
+    color: black;
+    width: 60%;
+    margin: auto;
+    margin-top:15px;
+}
+
+.georgiatext {
+    font-family: Georgia;
+}
