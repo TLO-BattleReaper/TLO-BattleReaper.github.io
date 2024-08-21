@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1e1e1e; /* Colore di sfondo scuro per il body */
+    margin: 0;
+    padding: 0;
+    color: #dcdcdc; /* Colore del testo chiaro */
+    position: relative;
+    min-height: 100vh; /* Assicurati che il corpo della pagina occupi almeno l'altezza della finestra */
+    padding-bottom: 60px; /* Spazio per il footer */
+}
+
+header {
+    background: #333; /* Sfondo scuro per l'header */
+    color: #fff; /* Testo bianco per contrasto */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background: rgba(40, 40, 40, 0.8); /* Sfondo scuro con trasparenza per le sezioni */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Ombra più scura per effetto di profondità */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Bordo scuro per contrasto */
+}
+
+section p {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #a9a9a9; /* Colore del testo delle descrizioni più chiaro per contrasto */
+}
+
+a {
+    color: #1e90ff; /* Colore dei link blu chiaro */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button.quiz-btn {
+    background-color: #f44336; /* Rosso per "Non fatto" di default */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px; /* Aumento delle dimensioni dei pulsanti */
+    cursor: pointer;
+    font-size: 1em; /* Dimensione del testo dei pulsanti */
+    margin-left: 10px; /* Spazio tra il testo e il pulsante */
+    transition: background-color 0.3s, transform 0.2s; /* Transizioni per effetto hover */
+}
+
+button.quiz-btn.fatto {
+    background-color: #4caf50; /* Verde per "Fatto" */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0; /* Aumento del padding del footer */
+    background: #333; /* Sfondo scuro per il footer */
+    color: #fff; /* Testo bianco per contrasto */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

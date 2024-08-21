@@ -1,191 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home Page </title>
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    canvas {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giochi di Indovinelli</title>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
-
 <body>
-  <h1>Robot - Stanislao Bianco</h1>
-  <h2><a href="Menù/Menù.html">Menù</a></h2>
-  <script>
-    function setup() {
-      //dimensioni X e Y dell'area di lavoro
-      createCanvas(1700, 2000);
-    }
-
-    function draw() {
-      //dimensioni X e Y dell'area di lavoro
-      createCanvas(1000, 800);
-    }
-
-    function draw() {
-      //modello colori R G B
-      background(127, 255, 0);
-
-      //riduzione in scala
-      scale(0.5);
-
-
-      fill(70, 130, 180); //colore faccia
-      square(mouseX / 0.5, mouseY / 0.5, 200); //faccia
-
-
-      line(mouseX / 0.5 + 10, mouseY / 0.5 - 50, mouseX / 0.5 + 50, mouseY / 0.5); //asta antenna sx
-
-
-      line(mouseX / 0.5 + 190, mouseY / 0.5 - 50, mouseX / 0.5 + 150, mouseY / 0.5); //asta antenna dx
-
-
-      fill(210, 105, 30); //colore cerchio antennna sx
-      circle(mouseX / 0.5 + 190, mouseY / 0.5 - 50, 15); //cerchio antenna sx
-
-
-      fill(210, 105, 30); //colore cerchio antenna dx
-      circle(mouseX / 0.5 + 10, mouseY / 0.5 - 50, 15); //cerchio antenna dx
-
-
-      fill(255, 77, 0); //colore occhio esterno sx
-      circle(mouseX / 0.5 + 65, mouseY / 0.5 + 45, 50); //occhio esterno sx
-
-      fill(34, 139, 34); //colore occhio interno 1 sx
-      circle(mouseX / 0.5 + 65, mouseY / 0.5 + 45, 30); //occhio interno 1 sx
-
-
-      fill(111, 0, 255); //colore occhio interno 2 sx
-      circle(mouseX / 0.5 + 65, mouseY / 0.5 + 50, 20); //occhio interno 2 sx
-
-
-      fill(255, 77, 0); //colore occhio esterno dx
-      circle(mouseX / 0.5 + 135, mouseY / 0.5 + 45, 50); //occhio esterno dx
-
-
-      fill(34, 139, 34); //colore occhio interno 1 dx
-      circle(mouseX / 0.5 + 135, mouseY / 0.5 + 45, 30); //occhio interno 1 dx
-
-
-      fill(111, 0, 255); //colore occhio interno 2 dx
-      circle(mouseX / 0.5 + 135, mouseY / 0.5 + 50, 20); //occhio interno 2 dx
-
-
-      fill(0, 123, 167); //colore naso
-      rect(mouseX / 0.5 + 90, mouseY / 0.5 + 50, 20, 70); //naso
-
-
-      fill(255, 36, 0); //colore bocca
-      rect(mouseX / 0.5 + 50, mouseY / 0.5 + 125, 100, 35); //bocca
-
-
-      fill(30, 144, 255); //colore corpo
-      rect(mouseX / 0.5 - 100, mouseY / 0.5 + 200, 400, 500); //corpo
-
-
-      fill(30, 144, 255); //colore sportello
-      rect(mouseX / 0.5 - 75, mouseY / 0.5 + 240, 350, 290); //sportello
-
-
-      fill(0, 47, 167); //colore vite sportello angolo alto sx
-      circle(mouseX / 0.5 - 40, mouseY / 0.5 + 280, 20); //vite sportello angolo alto sx
-      line(mouseX / 0.5 - 49, mouseY / 0.5 + 277, mouseX / 0.5 - 31, mouseY / 0.5 +
-        283); //stella 1 vite sportello angolo alto sx
-      line(mouseX / 0.5 - 35, mouseY / 0.5 + 272, mouseX / 0.5 - 45, mouseY / 0.5 +
-        288); //stella 2 vite sportello angolo alto sx
-
-
-      fill(0, 47, 167); //colore vite sportello angolo alto dx
-      circle(mouseX / 0.5 + 240, mouseY / 0.5 + 280, 20); //vite sportello angolo alto dx
-      line(mouseX / 0.5 + 231, mouseY / 0.5 + 277, mouseX / 0.5 + 249, mouseY / 0.5 +
-        283); //stella 1 vite sportello angolo alto dx
-      line(mouseX / 0.5 + 245, mouseY / 0.5 + 272, mouseX / 0.5 + 235, mouseY / 0.5 +
-        288); //stella 2 vite sportello angolo alto dx
-
-
-      fill(0, 47, 167); //colore vite sportello angolo basso sx
-      circle(mouseX / 0.5 - 40, mouseY / 0.5 + 485, 20); //vite sportello angolo basso sx
-      line(mouseX / 0.5 - 49, mouseY / 0.5 + 482, mouseX / 0.5 - 31, mouseY / 0.5 +
-        488); //stella 1 vite sportello angolo basso sx
-      line(mouseX / 0.5 - 35, mouseY / 0.5 + 477, mouseX / 0.5 - 45, mouseY / 0.5 +
-        493); //stella 2 vite sportello angolo basso sx
-
-
-      fill(0, 47, 167); //colore vite sportello angolo basso dx
-      circle(mouseX / 0.5 + 240, mouseY / 0.5 + 485, 20); //vite sportello angolo basso dx
-      line(mouseX / 0.5 + 231, mouseY / 0.5 + 482, mouseX / 0.5 + 249, mouseY / 0.5 +
-        488); //stella 1 vite sportello angolo basso dx
-      line(mouseX / 0.5 + 245, mouseY / 0.5 + 477, mouseX / 0.5 + 235, mouseY / 0.5 +
-        493); //stella 2 vite sportello angolo basso dx
-
-
-      fill(255, 255, 0); //colore cerchio corpo sx
-      circle(mouseX / 0.5 - 50, mouseY / 0.5 + 615, 60); //cerchio corpo sx
-
-
-      fill(255, 255, 0); //colore cerchio corpo dx
-      circle(mouseX / 0.5 + 249, mouseY / 0.5 + 615, 60); //cerchio corpo dx
-
-
-      fill(255, 255, 0); //colore rettangolo piccolo superiore corpo
-      rect(mouseX / 0.5, mouseY / 0.5 + 587, 200, 20); //rettangolo piccolo superiore corpo
-
-
-      fill(255, 255, 0); //colore rettangolo piccolo inferiore corpo
-      rect(mouseX / 0.5, mouseY / 0.5 + 623, 200, 20); //rettangolo piccolo inferiore corpo
-
-
-      fill(30, 144, 255); //colore braccio sx 1
-      rect(mouseX / 0.5 - 350, mouseY / 0.5 + 320, 250, 60); //braccio sx 1
-
-
-      fill(95, 95, 95); //colore braccio sx 2
-      rect(mouseX / 0.5 - 350, mouseY / 0.5 + 160, 60, 160); //braccio sx 2
-
-
-      fill(30, 144, 255); //colore braccio dx 1
-      rect(mouseX / 0.5 + 300, mouseY / 0.5 + 320, 250, 60); //braccio dx 1
-
-
-      fill(95, 95, 95); //colore braccio dx 2
-      rect(mouseX / 0.5 + 490, mouseY / 0.5 + 160, 60, 160); //braccio dx 2
-
-
-      fill(30, 144, 255); //colore gamba sx
-      rect(mouseX / 0.5 - 50, mouseY / 0.5 + 700, 100, 400); //gamba sx
-
-
-      fill(30, 144, 255); //colore gamba dx
-      rect(mouseX / 0.5 + 150, mouseY / 0.5 + 700, 100, 400); //gamba dx
-
-
-      fill(150, 75, 0); //colore pezzo rotella sx
-      rect(mouseX / 0.5 - 10, mouseY / 0.5 + 1100, 20, 60); //pezzo rotella sx
-
-
-      fill(5, 4, 2); //colore rotella sx
-      circle(mouseX / 0.5, mouseY / 0.5 + 1195, 70); //rotella sx
-
-
-      fill(150, 75, 0); //colore pezzo rotella dx
-      rect(mouseX / 0.5 + 190, mouseY / 0.5 + 1100, 20, 60); //pezzo rotella dx
-
-
-      fill(5, 4, 2); //colore rotella dx
-      circle(mouseX / 0.5 + 200, mouseY / 0.5 + 1195, 70); //rotella dx
-    }
-  </script>
+    <header>
+        <h1>Giochi di Indovinelli</h1>
+        <p>Il sommo termosifone ha creato questa pagina per te!</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Wordle</h2>
+            <p class="description">Indovina la parola del giorno</p>
+            <p>
+                <a href="https://pietroppeter.github.io/wordle-it/" target="_blank">Gioca a Wordle</a>
+                <button class="quiz-btn" data-site="wordle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Angle</h2>
+            <p class="description">Indovina l'angolo</p>
+            <p>
+                <a href="https://angle.wtf/" target="_blank">Gioca a Angle</a>
+                <button class="quiz-btn" data-site="angle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Quordle</h2>
+            <p class="description">Indovina 4 parole</p>
+            <p>
+                <a href="https://www.merriam-webster.com/games/quordle/#/" target="_blank">Gioca a Quordle</a>
+                <button class="quiz-btn" data-site="quordle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Flagle</h2>
+            <p class="description">Indovina la bandiera</p>
+            <p>
+                <a href="https://flagle-game.com/" target="_blank">Gioca a Flagle</a>
+                <button class="quiz-btn" data-site="flagle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Gamedle</h2>
+            <p class="description">Indovina il gioco</p>
+            <p>
+                <a href="https://www.gamedle.wtf/?lang=it" target="_blank">Gioca a Gamedle</a>
+                <button class="quiz-btn" data-site="gamedle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Guess The Game</h2>
+            <p class="description">Indovina il gioco dalle foto</p>
+            <p>
+                <a href="https://guessthe.game/" target="_blank">Gioca a Guess The Game</a>
+                <button class="quiz-btn" data-site="guessthegame">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Nerdle</h2>
+            <p class="description">Indovina l'espressione</p>
+            <p>
+                <a href="https://nerdlegame.com/#v=20240809001" target="_blank">Gioca a Nerdle</a>
+                <button class="quiz-btn" data-site="nerdle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Rankdle</h2>
+            <p class="description">Indovina i rank</p>
+            <p>
+                <a href="https://rankdle.com/" target="_blank">Gioca a Rankdle</a>
+                <button class="quiz-btn" data-site="rankdle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Pokedle</h2>
+            <p class="description">Indovina il Pokémon</p>
+            <p>
+                <a href="https://pokedle.net/" target="_blank">Gioca a Pokedle</a>
+                <button class="quiz-btn" data-site="pokedle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>OnePiecedle</h2>
+            <p class="description">Indovina il personaggio/frutto di One Piece</p>
+            <p>
+                <a href="https://onepiecedle.net/" target="_blank">Gioca a OnePiecedle</a>
+                <button class="quiz-btn" data-site="onepiecedle">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>TimeGuesser</h2>
+            <p class="description">Indovina luogo e anno dalla foto</p>
+            <p>
+                <a href="https://timeguessr.com/roundonedaily" target="_blank">Gioca a TimeGuesser</a>
+                <button class="quiz-btn" data-site="timeguesser">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Guess The Age</h2>
+            <p class="description">Indovina l'età dalla foto</p>
+            <p>
+                <a href="https://guesstheage.org/" target="_blank">Gioca a Guess The Age</a>
+                <button class="quiz-btn" data-site="guesstheage">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Totoquiz</h2>
+            <p class="description">Indovina i risultati delle squadre</p>
+            <p>
+                <a href="https://www.ed0.it/quiz/totoquiz/" target="_blank">Gioca a Totoquiz</a>
+                <button class="quiz-btn" data-site="totoquiz">Non fatto</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>Parola Chiave</h2>
+            <p class="description">Scegli le parole giuste, poi scegline una che le collega tutte</p>
+            <p>
+                <a href="https://www.ed0.it/quiz/parolachiave/" target="_blank">Gioca a Parola Chiave</a>
+                <button class="quiz-btn" data-site="parolachiave">Non fatto</button>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div id="loading">Loading...</div>
+        <p id="clock" style="display: none;"></p>
+    </footer>
+
+    <script src="assets/script.js"></script>
 </body>
-
 </html>
