@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Party Games Hub</title>
     <style>
+      /* ── Reset & Base ── */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+
+      /* ── Scrollbar ── */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #22d3ee, #a855f7);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #06b6d4, #9333ea);
+      }
+
+      html {
+        scrollbar-width: thin;
+        scrollbar-color: #a855f7 #0a0a0a;
       }
 
       body {
@@ -23,6 +47,7 @@
         overflow-x: hidden;
       }
 
+      /* ── Sfondo gradiente ── */
       body::before {
         content: "";
         position: fixed;
@@ -36,6 +61,7 @@
         z-index: 0;
       }
 
+      /* ── Container ── */
       .container {
         position: relative;
         z-index: 1;
@@ -44,6 +70,7 @@
         padding: 48px 24px;
       }
 
+      /* ── Header ── */
       .header {
         text-align: center;
         margin-bottom: 64px;
@@ -85,6 +112,7 @@
         }
       }
 
+      /* ── Sezioni ── */
       .section {
         margin-bottom: 80px;
       }
@@ -114,6 +142,7 @@
         font-weight: 700;
       }
 
+      /* ── Griglia Cards ── */
       .grid {
         display: grid;
         gap: 24px;
@@ -124,9 +153,10 @@
       }
 
       .grid-party {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       }
 
+      /* ── Card Quiz ── */
       .card-quiz {
         display: block;
         text-decoration: none;
@@ -179,6 +209,7 @@
         line-height: 1.6;
       }
 
+      /* ── Card Party ── */
       .card-party {
         display: block;
         text-decoration: none;
@@ -244,6 +275,7 @@
         transform: translateX(4px);
       }
 
+      /* ── Footer ── */
       footer {
         margin-top: 96px;
         text-align: center;
@@ -259,6 +291,7 @@
         letter-spacing: 1px;
       }
 
+      /* ── Animazione ── */
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -270,6 +303,7 @@
         }
       }
 
+      /* ── Responsive ── */
       @media (max-width: 640px) {
         .header h1 {
           font-size: 2.2rem;
@@ -407,6 +441,11 @@
           name: "GeoTastic",
           url: "https://geotastic.net/home",
           desc: "GeoGuessr gratis e multiplayer.",
+        },
+        {
+          name: "Jeopardy",
+          url: "https://jeopardylabs.com/",
+          desc: "Quiz di qualsiasi genere in compagnia.",
         },
       ];
 
