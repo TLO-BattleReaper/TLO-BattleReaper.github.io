@@ -1,143 +1,455 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giochi di Indovinelli</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <script src="assets/script.js" defer></script>
-    
-</head>
-<body>
-    <header>
-        <h1>Giochi di Indovinelli</h1>
-        <p>Il sommo termosifone ha creato questa pagina per te!</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Party Games Hub</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <main>
-        <section>
-            <h2>Wordle</h2>
-            <p class="description">Indovina la parola del giorno</p>
-            <p>
-                <a href="https://pietroppeter.github.io/wordle-it/" target="_blank">Gioca a Wordle</a>
-                <button class="quiz-btn" data-site="wordle">Non fatto</button>
-            </p>
-        </section>
+      body {
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #000;
+        color: #fff;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-        <section>
-            <h2>Angle</h2>
-            <p class="description">Indovina l'angolo</p>
-            <p>
-                <a href="https://angle.wtf/" target="_blank">Gioca a Angle</a>
-                <button class="quiz-btn" data-site="angle">Non fatto</button>
-            </p>
-        </section>
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(88, 28, 135, 0.3),
+          #000 50%,
+          rgba(21, 94, 117, 0.3)
+        );
+        z-index: 0;
+      }
 
-        <section>
-            <h2>Flagle</h2>
-            <p class="description">Indovina la bandiera</p>
-            <p>
-                <a href="https://flagle-game.com/" target="_blank">Gioca a Flagle</a>
-                <button class="quiz-btn" data-site="flagle">Non fatto</button>
-            </p>
-        </section>
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 24px;
+      }
 
-        <section>
-            <h2>Gamedle</h2>
-            <p class="description">Indovina il gioco</p>
-            <p>
-                <a href="https://www.gamedle.wtf/?lang=it" target="_blank">Gioca a Gamedle</a>
-                <button class="quiz-btn" data-site="gamedle">Non fatto</button>
-            </p>
-        </section>
+      .header {
+        text-align: center;
+        margin-bottom: 64px;
+      }
 
-        <section>
-            <h2>Guess The Game</h2>
-            <p class="description">Indovina il gioco dalle foto</p>
-            <p>
-                <a href="https://guessthe.game/" target="_blank">Gioca a Guess The Game</a>
-                <button class="quiz-btn" data-site="guessthegame">Non fatto</button>
-            </p>
-        </section>
+      .header h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(90deg, #22d3ee, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: pulse 2s ease-in-out infinite;
+      }
 
-        <section>
-            <h2>Nerdle</h2>
-            <p class="description">Indovina l'espressione</p>
-            <p>
-                <a href="https://nerdlegame.com/#v=20240809001" target="_blank">Gioca a Nerdle</a>
-                <button class="quiz-btn" data-site="nerdle">Non fatto</button>
-            </p>
-        </section>
+      .header p {
+        color: #a1a1aa;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 16px auto 0;
+        line-height: 1.7;
+      }
 
-        <section>
-            <h2>Rankdle</h2>
-            <p class="description">Indovina i rank</p>
-            <p>
-                <a href="https://rankdle.com/" target="_blank">Gioca a Rankdle</a>
-                <button class="quiz-btn" data-site="rankdle">Non fatto</button>
-            </p>
-        </section>
+      .header .firma {
+        display: block;
+        margin-top: 12px;
+        color: #22d3ee;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
 
-        <section>
-            <h2>Pokedle</h2>
-            <p class="description">Indovina il Pokémon</p>
-            <p>
-                <a href="https://pokedle.net/" target="_blank">Gioca a Pokedle</a>
-                <button class="quiz-btn" data-site="pokedle">Non fatto</button>
-            </p>
-        </section>
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
 
-        <section>
-            <h2>OnePiecedle</h2>
-            <p class="description">Indovina il personaggio/frutto di One Piece</p>
-            <p>
-                <a href="https://onepiecedle.net/" target="_blank">Gioca a OnePiecedle</a>
-                <button class="quiz-btn" data-site="onepiecedle">Non fatto</button>
-            </p>
-        </section>
+      .section {
+        margin-bottom: 80px;
+      }
 
-        <section>
-            <h2>TimeGuesser</h2>
-            <p class="description">Indovina luogo e anno dalla foto</p>
-            <p>
-                <a href="https://timeguessr.com/roundonedaily" target="_blank">Gioca a TimeGuesser</a>
-                <button class="quiz-btn" data-site="timeguesser">Non fatto</button>
-            </p>
-        </section>
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
 
-        <section>
-            <h2>Guess The Age</h2>
-            <p class="description">Indovina l'età dalla foto</p>
-            <p>
-                <a href="https://guesstheage.org/" target="_blank">Gioca a Guess The Age</a>
-                <button class="quiz-btn" data-site="guesstheage">Non fatto</button>
-            </p>
-        </section>
+      .section-header .linea {
+        width: 64px;
+        height: 4px;
+        border-radius: 4px;
+      }
 
-        <section>
-            <h2>Totoquiz</h2>
-            <p class="description">Indovina i risultati delle squadre</p>
-            <p>
-                <a href="https://www.ed0.it/quiz/totoquiz/" target="_blank">Gioca a Totoquiz</a>
-                <button class="quiz-btn" data-site="totoquiz">Non fatto</button>
-            </p>
-        </section>
+      .linea-cyan {
+        background: #22d3ee;
+      }
+      .linea-purple {
+        background: #c084fc;
+      }
 
-        <section>
-            <h2>Parola Chiave</h2>
-            <p class="description">Scegli le parole giuste, poi scegline una che le collega tutte</p>
-            <p>
-                <a href="https://www.ed0.it/quiz/parolachiave/" target="_blank">Gioca a Parola Chiave</a>
-                <button class="quiz-btn" data-site="parolachiave">Non fatto</button>
-            </p>
-        </section>
-    </main>
+      .section-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
 
-    <footer>
-        <div id="loading">Loading...</div>
-        <p id="clock" style="display: none;"></p>
-    </footer>
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
 
-    <script src="assets/script.js"></script>
-</body>
+      .grid-quiz {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+
+      .grid-party {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+
+      .card-quiz {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 24px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
+      }
+
+      .card-quiz:hover {
+        transform: scale(1.05);
+        border-color: rgba(34, 211, 238, 0.5);
+      }
+
+      .card-quiz .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .card-quiz h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        transition: color 0.3s;
+      }
+
+      .card-quiz:hover h3 {
+        color: #22d3ee;
+      }
+
+      .card-quiz .freccia {
+        font-size: 1.4rem;
+        transition: transform 0.3s;
+      }
+
+      .card-quiz:hover .freccia {
+        transform: translateX(4px);
+      }
+
+      .card-quiz p {
+        color: #a1a1aa;
+        line-height: 1.6;
+      }
+
+      .card-party {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 32px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(135deg, #18181b, #27272a);
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .card-party:hover {
+        transform: translateY(-8px);
+        border-color: rgba(192, 132, 252, 0.6);
+      }
+
+      .card-party .emoji {
+        font-size: 3rem;
+        display: block;
+        margin-bottom: 24px;
+        transition: transform 0.3s;
+      }
+
+      .card-party:hover .emoji {
+        transform: rotate(6deg);
+      }
+
+      .card-party h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        transition: color 0.3s;
+      }
+
+      .card-party:hover h3 {
+        color: #c084fc;
+      }
+
+      .card-party p {
+        color: #a1a1aa;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .card-party .cta {
+        color: #c084fc;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .card-party .cta .freccia {
+        transition: transform 0.3s;
+      }
+
+      .card-party:hover .cta .freccia {
+        transform: translateX(4px);
+      }
+
+      footer {
+        margin-top: 96px;
+        text-align: center;
+        color: #71717a;
+        font-size: 0.875rem;
+        line-height: 1.7;
+      }
+
+      footer .sotto {
+        margin-top: 8px;
+        color: #a1a1aa;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .header h1 {
+          font-size: 2.2rem;
+        }
+
+        .grid-quiz,
+        .grid-party {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Party Games Hub</h1>
+        <p>
+          Una raccolta di quiz e giochi multiplayer per serate in compagnia,
+          tutti rigorosamente gratis (stiamo uccisi).
+          <span class="firma">Dal sommo termosifone</span>
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="linea linea-cyan"></div>
+          <h2>Quiz Games</h2>
+        </div>
+        <div class="grid grid-quiz" id="quiz-grid"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="linea linea-purple"></div>
+          <h2>Games Together</h2>
+        </div>
+        <div class="grid grid-party" id="party-grid"></div>
+      </div>
+
+      <footer>
+        <p>
+          Creato per serate magiche. Diritti riservati ai pelati, ricci, bionde
+          e futuri caschetti.
+        </p>
+        <p class="sotto">Il consiglio dei fidati</p>
+      </footer>
+    </div>
+
+    <script>
+      const quizGames = [
+        {
+          name: "Wordle IT",
+          url: "https://pietroppeter.github.io/wordle-it/",
+          desc: "La versione italiana di Wordle.",
+        },
+        {
+          name: "Angle",
+          url: "https://angle.wtf/",
+          desc: "Indovina l'angolo corretto.",
+        },
+        {
+          name: "Flagle",
+          url: "https://flagle-game.com/",
+          desc: "Indovina la bandiera del paese.",
+        },
+        {
+          name: "Gamedle",
+          url: "https://www.gamedle.wtf/?lang=it",
+          desc: "Riconosci videogiochi da immagini e dettagli.",
+        },
+        {
+          name: "Guess The Game",
+          url: "https://guessthe.game/",
+          desc: "Indovina il videogioco da screenshot progressivi.",
+        },
+        {
+          name: "Nerdle",
+          url: "https://nerdlegame.com/",
+          desc: "Wordle ma con matematica.",
+        },
+        {
+          name: "Rankdle",
+          url: "https://rankdle.com/",
+          desc: "Indovina il rank dai clip competitivi.",
+        },
+        {
+          name: "Pokedle",
+          url: "https://pokedle.net/",
+          desc: "Pokémon + Wordle.",
+        },
+        {
+          name: "OnePiecedle",
+          url: "https://onepiecedle.net/",
+          desc: "Per chi conosce troppo bene One Piece.",
+        },
+        {
+          name: "TimeGuessr",
+          url: "https://timeguessr.com/",
+          desc: "Indovina luogo e anno storico da una foto.",
+        },
+        {
+          name: "Guess The Age",
+          url: "https://guesstheage.org/",
+          desc: "Indovina l'età delle persone.",
+        },
+        {
+          name: "TotoQuiz",
+          url: "https://www.ed0.it/quiz/totoquiz/",
+          desc: "Bet sui risultati finali delle partite.",
+        },
+        {
+          name: "Parola Chiave",
+          url: "https://www.ed0.it/quiz/parolachiave/",
+          desc: "Quiz a parole e associazioni.",
+        },
+        {
+          name: "LightQuiz",
+          url: "https://www.lightquiz.com/index.php?content=test&arg=Cultura-generale",
+          desc: "Domande generali e quiz vari.",
+        },
+      ];
+
+      const partyGames = [
+        {
+          name: "skribbl.io",
+          url: "https://skribbl.io/",
+          desc: "Disegna. Gli altri devono capire cosa hai tentato di fare.",
+        },
+        {
+          name: "Gartic Phone",
+          url: "https://garticphone.com/",
+          desc: "Una specie di skribbl ma più potente.",
+        },
+        {
+          name: "GeoTastic",
+          url: "https://geotastic.net/home",
+          desc: "GeoGuessr gratis e multiplayer.",
+        },
+      ];
+
+      const quizGrid = document.getElementById("quiz-grid");
+
+      quizGames.forEach((game, i) => {
+        const card = document.createElement("a");
+        card.href = game.url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+        card.className = "card-quiz";
+        card.style.animationDelay = i * 0.05 + "s";
+
+        card.innerHTML = `
+        <div class="top">
+          <h3>${game.name}</h3>
+          <span class="freccia">→</span>
+        </div>
+        <p>${game.desc}</p>
+      `;
+
+        quizGrid.appendChild(card);
+      });
+
+      const partyGrid = document.getElementById("party-grid");
+
+      partyGames.forEach((game, i) => {
+        const card = document.createElement("a");
+        card.href = game.url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+        card.className = "card-party";
+        card.style.animationDelay = i * 0.1 + "s";
+
+        card.innerHTML = `
+        <span class="emoji">🎮</span>
+        <h3>${game.name}</h3>
+        <p>${game.desc}</p>
+        <span class="cta">Gioca ora <span class="freccia">→</span></span>
+      `;
+
+        partyGrid.appendChild(card);
+      });
+    </script>
+  </body>
 </html>
